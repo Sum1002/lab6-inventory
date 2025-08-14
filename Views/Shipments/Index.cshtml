@@ -1,0 +1,43 @@
+@model IEnumerable<InventoryManagement.Models.Shipment>
+
+@{
+    ViewData["Title"] = "Shipments";
+}
+
+<h1>Shipments</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Shipment</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Supplier</th>
+            <th>Product</th>
+            <th>Warehouse</th>
+            <th>@Html.DisplayNameFor(model => model.Quantity)</th>
+            <th>@Html.DisplayNameFor(model => model.ShipmentDate)</th>
+            <th>@Html.DisplayNameFor(model => model.TotalCost)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Supplier.CompanyName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Product.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Warehouse.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+                <td>@Html.DisplayFor(modelItem => item.ShipmentDate.ToShortDateString())</td>
+                <td>@Html.DisplayFor(modelItem => item.TotalCost)</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.ShipmentId" class="btn btn-info btn-sm">Details</a>
+                    <a asp-action="Edit" asp-route-id="@item.ShipmentId" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.ShipmentId" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

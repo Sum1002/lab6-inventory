@@ -1,0 +1,67 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Inventory Management System</h1>
+    <p class="lead">Manage your products, warehouses, suppliers, and shipments efficiently.</p>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Products</h5>
+                <p class="card-text">Manage your product catalog with details like name, description, price, and SKU.</p>
+                <a asp-controller="Products" asp-action="Index" class="btn btn-primary">View Products</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Warehouses</h5>
+                <p class="card-text">Track your warehouse locations and storage capacities.</p>
+                <a asp-controller="Warehouses" asp-action="Index" class="btn btn-primary">View Warehouses</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Suppliers</h5>
+                <p class="card-text">Manage supplier information and contact details.</p>
+                <a asp-controller="Suppliers" asp-action="Index" class="btn btn-primary">View Suppliers</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Shipments</h5>
+                <p class="card-text">Track product shipments and inventory updates.</p>
+                <a asp-controller="Shipments" asp-action="Index" class="btn btn-primary">View Shipments</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>System Overview</h5>
+            </div>
+            <div class="card-body">
+                <p>This Inventory Management System provides comprehensive tracking of:</p>
+                <ul>
+                    <li><strong>Products:</strong> Manage product information including name, description, unit price, category, and SKU</li>
+                    <li><strong>Warehouses:</strong> Track warehouse locations and storage capacities</li>
+                    <li><strong>Suppliers:</strong> Maintain supplier contact information and company details</li>
+                    <li><strong>Inventory:</strong> Monitor stock quantities across different warehouses</li>
+                    <li><strong>Shipments:</strong> Record and track product deliveries with automatic inventory updates</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
